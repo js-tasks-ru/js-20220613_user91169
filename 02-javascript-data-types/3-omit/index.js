@@ -5,5 +5,11 @@
  * @returns {object} - returns the new object
  */
 export const omit = (obj, ...fields) => {
-
+  const _difference = {}
+  for (const key of Object.keys(obj)){
+    if (!fields.includes(key)){
+      _difference[key] = obj[key];
+    }
+  }
+  return _difference;
 };
